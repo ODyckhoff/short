@@ -1,0 +1,20 @@
+# Turn on the Rewrite Engine.
+RewriteEngine On
+# Rules
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-l
+
+# Doing stuff.
+RewriteRule ^l/(.*)$ /link.php?l=$1 [QSA,L]
+RewriteRule ^i/(.*)$ /info.php?l=$1 [QSA,L]
+RewriteRule ^u/(.*)$ /user.php?u=$1 [QSA,L]
+
+# Auth.
+RewriteRule ^(login|register)/?$ /auth.php
+RewriteRule ^logout/?$ /logout.php
+
+# Reporting.
+RewriteRule ^r/?$ /report.php [QSA,L]
+RewriteRule ^r/user/(.*)$ /report.php?u=$1 [QSA,L]
+RewriteRule ^r/link/(.*)$ /report.php?l=$1 [QSA,L]
