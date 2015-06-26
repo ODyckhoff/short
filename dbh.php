@@ -3,6 +3,6 @@
 
     function getDB() {
         $dsn = 'mysql:dbname=short;host=127.0.0.1';
-        $db = new PDO($dsn, 'root', '2R41RviX');
+        $db = new PDO($dsn, 'user', 'pass');
         return $db;
     }
